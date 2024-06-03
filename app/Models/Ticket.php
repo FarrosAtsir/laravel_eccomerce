@@ -11,10 +11,11 @@ class Ticket extends Model
     use HasFactory , SoftDeletes;
 
     protected $fillable = [
-        'name',
-        'price',
-        'quantity',
-        'max_buy'
+      'event_id',
+      'name',
+      'price',
+      'quantity',
+      'max_buy'
     ];
 
     //relation to event

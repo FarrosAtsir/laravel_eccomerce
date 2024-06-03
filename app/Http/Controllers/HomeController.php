@@ -10,9 +10,8 @@ class HomeController extends Controller
 {
  
     public function index(): View
-    {  
+    {   
         $events= $this->fetchEvent();
-      
         $categories = $this->fetchCategory();
        
         return view('frontend.index',compact('events','categories'));

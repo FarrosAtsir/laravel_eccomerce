@@ -115,10 +115,10 @@ class EventController extends Controller
             ]);
         }
           // Create event
-    Event::create($request->except('files'));
+    Event::find($id)->update($request->except('files'));
 
     // Return to index
-    return redirect()->route('admin.events.index')->with('success', 'Event created');
+    return redirect()->route('admin.events.index')->with('success', 'Event edited');
     }
 
     /**

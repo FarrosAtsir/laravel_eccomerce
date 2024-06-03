@@ -39,6 +39,14 @@
                     <td class="px-6 py-4">{{ $event->start_time->format('d M Y') }}</td>
                     <td class="px-6 py-4">{{ $event->duration }} Hours</td>
                     <td class="px-6 py-4 space-y-1 text-center">
+                      <a href="{{ route('admin.events.transactions.index', $event->id) }}"
+                        class="block px-2 py-1 text-white bg-yellow-500 rounded">
+                       Transaksi
+                      </a>
+                      <a href="{{ route('admin.events.tickets.index', $event->id) }}"
+                        class="block px-2 py-1 text-white bg-green-500 rounded">
+                       Tiket
+                     </a>
                       <a href="{{ route('admin.events.edit', $event->id) }}"
                          class="block px-2 py-1 text-white bg-blue-500 rounded">
                         Edit

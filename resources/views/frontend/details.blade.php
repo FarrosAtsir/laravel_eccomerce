@@ -35,20 +35,13 @@
 
     <section class="relative overflow-hidden">
         <div class="container relative max-w-screen-xl">
+            @if ($event->photos)
             <div id="galleryCarousel">
-                <img src="{{ asset('assets/images/gallery-1.webp') }}" class="w-[433px] h-[310px] rounded-2xl mr-[30px]"
-                    alt="tickety-assets">
-                <img src="{{ asset('assets/images/gallery-2.webp') }}" class="w-[433px] h-[310px] rounded-2xl mr-[30px]"
-                    alt="tickety-assets">
-                <img src="{{ asset('assets/images/gallery-3.webp') }}" class="w-[433px] h-[310px] rounded-2xl mr-[30px]"
-                    alt="tickety-assets">
-                <img src="{{ asset('assets/images/gallery-1.webp') }}" class="w-[433px] h-[310px] rounded-2xl mr-[30px]"
-                    alt="tickety-assets">
-                <img src="{{ asset('assets/images/gallery-2.webp') }}" class="w-[433px] h-[310px] rounded-2xl mr-[30px]"
-                    alt="tickety-assets">
-                <img src="{{ asset('assets/images/gallery-1.webp') }}" class="w-[433px] h-[310px] rounded-2xl mr-[30px]"
-                    alt="tickety-assets">
+                @foreach ($event->photos as $photo)
+                    <img src="{{ Storage::url($photo) }}" class="w-[433px] h-[310px] rounded-2xl mr-[30px]" alt="tickety-assets">
+                @endforeach
             </div>
+            @endif
             <!-- Prev Button -->
             <div class="absolute hidden -translate-y-1/2 top-1/2 right-4 lg:right-[200px] cursor-pointer"
                 id="carouselRightButton">
@@ -149,7 +142,7 @@
                                 <img src="{{ asset('assets/svgs/ic-minus.svg') }}" alt="tickety-assets">
                             </button>
                             <input type="number" name="tickets[{{ $ticket->id }}]" data-price="{{ $ticket->price }}"
-                                class="text-center bg-transparent focus:outline-none" value="0" min="0" max="{{ $ticket->quantity  < $ticket->max_buy ? $ticket->quantity : $ticket->max_buy }}">
+                                class="text-center bg-transparent border-none focus:outline-none" value="0" min="0" max="{{ $ticket->quantity  < $ticket->max_buy ? $ticket->quantity : $ticket->max_buy }}">
                             <button type="button" class="plusButton">
                                 <img src="{{ asset('assets/svgs/ic-plus.svg') }}" alt="tickety-assets">
                             </button>
