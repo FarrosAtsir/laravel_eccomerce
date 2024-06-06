@@ -7,14 +7,12 @@
               <div class="inline-flex gap-[6px] items-center bg-lavender-pink rounded-full px-4 py-[6px] w-max">
                   <img src="{{ asset('assets/svgs/ic-champion-cup.svg') }}" alt="tickety-assets">
                   <p class="text-sm font-semibold text-dark-indigo">
-                      Buy one get three tickets
+                      Buy one get one ticket
                   </p>
               </div>
               <h1 class="text-[36px] md:text-[48px] text-white font-bold">
-                  Empower Your
-                  <span
-                      class="text-dark-indigo bg-butter-yellow inline-flex items-center h-[49px] w-max">Passions</span>
-                  Today
+                  Go To Event And Get
+                  <span class="text-dark-indigo bg-butter-yellow inline-flex items-center h-[49px] w-max">Primogems</span>
               </h1>
               <p class="text-base leading-8 md:text-lg text-iron-grey">
                   You deserve new experiences that enhance
@@ -27,7 +25,7 @@
               </div>
           </div>
 
-          <img src="{{ asset('assets/images/hero-image.webp') }}" class="max-w-[584px] max-h-[400px] w-full h-full"
+          <img src="{{ asset('assets/images/home.png') }}" class="max-w-[584px] max-h-[400px] w-full h-full"
               alt="tickety-assets">
       </div>
   </section>

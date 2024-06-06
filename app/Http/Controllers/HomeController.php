@@ -12,6 +12,7 @@ class HomeController extends Controller
     public function index(): View
     {   
         $events= $this->fetchEvent();
+        // dd($events);
         $categories = $this->fetchCategory();
        
         return view('frontend.index',compact('events','categories'));
@@ -20,7 +21,7 @@ class HomeController extends Controller
    //fetch data event
    private function fetchEvent(){
     $category = request()->query('category');
-    $event = Event::upcoming();
+    $event = Event::query();
    
     //limit event 6
     if(!request()->query('all_events')){
